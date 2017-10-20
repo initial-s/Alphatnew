@@ -8,10 +8,10 @@ const config = require('./config');
 const { Message, OpType, Location } = require('../curve-thrift/line_types');
 let exec = require('child_process').exec;
 
-const myBot = ['u5ee3f8b1c2783990512a02c14d312c89','u88551cb4b9ab9508138d5d35da962c9c'];//INSERT YOUR ADMIN MID HERE
+const myBot = ['uec13f3c18fd696fe7c2ffd4c7e001a31','u24c74724f14e1c1d9a28d24f9c6ee81d','u2bf9faf691fd9432c37f6a4e6362b920','ubea140b0074f68bffa749b72d86fe149'];//INSERT YOUR ADMIN MID HERE
 var vx = {};var midnornama = "";var pesane = "";var kickhim = "";var waitMsg = "no";//DO NOT CHANGE THIS
 var banList = [];//Banned list
-var komenTL = "AutoLike by GoogleX\nline://ti/p/~rakamastah"; //Comment for timeline
+var komenTL = "AutoLike by GoogleX\n"; //Comment for timeline
 var limitposts = '10'; //Output timeline post
 
 function isAdminOrBot(param) {
@@ -47,30 +47,30 @@ class LINE extends LineAPI {
 		this.keyhelp = "\n\
 ====================\n\
 # Keyword List\n\n\
-=> !addcontact *ADMIN*\n\
-=> !ban *ADMIN*\n\
-=> !banlist\n\
-=> !botleft *ADMIN*\n\
-=> !cancel\n\
-=> !cekid\n\
-=> !gURL\n\
-=> !ginfo\n\
-=> !halo\n\
-=> !kepo\n\
-=> !key\n\
-=> !kickban *ADMIN*\n\
-=> !kickall *ADMIN*\n\
-=> !kickme\n\
-=> !msg\n\
-=> !mute *ADMIN*\n\
-=> !myid\n\
-=> !sendcontact\n\
-=> !setting\n\
-=> !speed\n\
-=> !tagall\n\
-=> !unmute *ADMIN*\n\
-=> !unban *ADMIN*\n\
-=> !youtube\n\
+=> √addcontact *ADMIN*\n\
+=> √ban *ADMIN*\n\
+=> √banlist\n\
+=> √botleft *ADMIN*\n\
+=> √cancel\n\
+=> √cekid\n\
+=> √gURL\n\
+=> √ginfo\n\
+=> √halo\n\
+=> √kepo\n\
+=> √key\n\
+=> √kickban *ADMIN*\n\
+=> √kickall *ADMIN*\n\
+=> √kickme\n\
+=> √msg\n\
+=> √mute *ADMIN*\n\
+=> √myid\n\
+=> √sendcontact\n\
+=> √setting\n\
+=> √speed\n\
+=> √tagall\n\
+=> √unmute *ADMIN*\n\
+=> √unban *ADMIN*\n\
+=> √youtube\n\
 \n\n# Gunakan bot dengan bijak ^_^";
         var that = this;
     }
@@ -129,7 +129,7 @@ class LINE extends LineAPI {
 		    let babay = new Message();
 			babay.to = operation.param1;
 			babay.toType = 2;
-			babay.text = "Ada apa bang ? kok leave ?";
+			babay.text = "good bye\nsee you again";
 			this._invite(operation.param1,[operation.param2]);
 			this._client.sendMessage(0, babay);
 		}else if(operation.type == 15 && !isAdminOrBot(operation.param2)){
@@ -141,7 +141,7 @@ class LINE extends LineAPI {
 		if(operation.type == 5 && this.stateStatus.salam == 1) {//someone adding me..
             let halo = new Message();
 			halo.to = operation.param1;
-			halo.text = "Creator: line://ti/p/~rakamastah (~GoogleX)";
+			halo.text = "Creator: line://ti/p/~devilblack86 (CITL DESIGN) by GOOGLE X";
 			this._client.sendMessage(0, halo);
         }
 
@@ -363,7 +363,7 @@ class LINE extends LineAPI {
 				if(seq.text == null || typeof seq.text === "undefined" || !seq.text){
 					let namanya = listMember[i].dn;
 				    let midnya = listMember[i].mid;
-				    seq.text += "@"+namanya+" \n";
+				    seq.text += "@"+namanya+"\n";
                     let member = [namanya];
         
                     let tmp = 0;
@@ -382,7 +382,7 @@ class LINE extends LineAPI {
 				    let midnya = listMember[i].mid;
 					let kata = seq.text.split("");
 					let panjang = kata.length;
-				    seq.text += "@"+namanya+" \n";
+				    seq.text += "@"+namanya+"\n";
                     let member = [namanya];
         
                     let tmp = 0;
@@ -502,7 +502,7 @@ class LINE extends LineAPI {
 			if(vx[2] == null || typeof vx[2] === "undefined" || !vx[2]){
 			    waitMsg = "yes";
 			    vx[0] = seq.from_;vx[1] = txt;vx[2] = "arg1";
-			    this._sendMessage(seq,"Kontaknya siapa bang ? #Tag orangnya atau kirim midnya");
+			    this._sendMessage(seq,"Kontaknya siapa bang ?");
 			}else{
 				waitMsg = "no";vx[0] = "";vx[1] = "";vx[2] = "";vx[3] = "";
 				this._sendMessage(seq,"#CANCELLED");
@@ -623,7 +623,7 @@ class LINE extends LineAPI {
 			if(vx[2] == null || typeof vx[2] === "undefined" || !vx[2]){
 			    waitMsg = "yes";
 			    vx[0] = seq.from_;vx[1] = txt;vx[2] = "arg1";
-			    this._sendMessage(seq,"Cek ID siapa bang ? #Kirim kontaknya");
+			    this._sendMessage(seq,"Cek ID siapa bang ?");
 				this._sendMessage(seq,"Atau bisa juga @tag orangnya");
 			}else{
 				waitMsg = "no";vx[0] = "";vx[1] = "";vx[2] = "";vx[3] = "";
